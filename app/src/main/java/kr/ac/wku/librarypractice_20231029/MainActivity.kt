@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.normal.TedPermission
 import kr.ac.wku.librarypractice_20231029.databinding.ActivityMainBinding
 
 
@@ -49,6 +51,15 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+//                  실제로 권한을 물어보자
+
+            TedPermission.create()
+                .setPermissionListener(pl)
+                .setDeniedMessage("권한 안주면 통화 안됩니다")
+
+            // 화면이 켜지면 바로 이미지 불러내기 ( 웹 상 이미지)
+
+            Glide.with(this).load("https://t1.daumcdn.net/movie/93bdeb491de552e11d7ad8a5dbaecc0ff26086bc").
 
 
 
