@@ -3,6 +3,7 @@ package kr.ac.wku.librarypractice_20231029
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -57,9 +58,7 @@ class MainActivity : AppCompatActivity() {
                 .setPermissionListener(pl)
                 .setDeniedMessage("권한 안주면 통화 안됩니다")
 
-            // 화면이 켜지면 바로 이미지 불러내기 ( 웹 상 이미지)
 
-            Glide.with(this).load("https://t1.daumcdn.net/movie/93bdeb491de552e11d7ad8a5dbaecc0ff26086bc").
 
 
 
@@ -67,7 +66,9 @@ class MainActivity : AppCompatActivity() {
 
 
             }
-
+// 화면이 켜지면 바로 이미지 불러내기 ( 웹 상 이미지)
+        val imageView = findViewById<ImageView>(R.id.imgThumbnail)
+        Glide.with(this).load("https://t1.daumcdn.net/movie/93bdeb491de552e11d7ad8a5dbaecc0ff26086bc").into(imageView)
         }
 
 
