@@ -14,11 +14,15 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
 //        이미지뷰도 클릭 이벤트 지원
-
 //        ViewPhotoActivity로 이동
+        binding.imgProfile.setOnClickListener{
+            val myIntent = Intent(this, ViewPhotoActivity::class.java)
+            startActivity(myIntent)
+            
+        }
 
-        val myIntent = Intent(this, ViewPhotoActivity::class.java)
-        startActivity(myIntent)
+
+
 
     }
 }
